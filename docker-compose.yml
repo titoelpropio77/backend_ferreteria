@@ -1,0 +1,52 @@
+version: '3.9'
+services:
+  db:
+    image: postgres
+    restart: always
+    container_name: database_ferreteria
+    environment:
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_DB=ferreteria
+      - POSTGRES_USER=postgres
+    ports:
+      - "5438:5432"
+    volumes:
+      - db_f_data:/var/lib/postgresql/data
+    networks:
+      - laravel2_net
+      #ipv4_address: 172.21.100.9
+
+      #ipv4_address: 172.21.100.11
+  backend_ferreteria:
+    image: api-backend
+    build:
+      context: .
+      dockerfile: Dockerfile
+      #dns:
+      # - 8.8.8.8
+      # - 4.4.4.4
+    container_name: backend_ferreteria
+    ports:
+      - "8800:80"
+
+    deploy:
+      resources:
+        limits:
+          cpus: "4.0"
+          memory: 1000M
+        reservations:
+          cpus: '0.0001'
+          memory: 100M
+    volumes:
+      - .:/var/www/html
+    networks:
+      - laravel2_net
+      #ipv4_address: 172.21.100.10
+    depends_on:
+      - db
+
+volumes:
+  db_f_data:
+
+networks:
+  laravel2_net:

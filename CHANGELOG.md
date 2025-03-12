@@ -1,6 +1,10 @@
 # Release Notes
 
-## [Unreleased](https://github.com/laravel/laravel/compare/v12.0.2...12.x)
+## [Unreleased](https://github.com/laravel/laravel/compare/1.0.0...master)
+
+## [1.0.0](https://github.com/laravel/laravel/compare/v12.0.2...1.0.0) - 2025-03-12
+
+**Full Changelog**: https://github.com/titoelpropio77/backend_ferreteria/commits/1.0.0
 
 ## [v12.0.2](https://github.com/laravel/laravel/compare/v12.0.1...v12.0.2) - 2025-03-04
 
@@ -13,5 +17,7 @@
 ## [v12.0.0 (2025-??-??)](https://github.com/laravel/laravel/compare/v11.0.2...v12.0.0)
 
 Laravel 12 includes a variety of changes to the application skeleton. Please consult the diff to see what's new.
+
 ## version de php
+
 php 8.3

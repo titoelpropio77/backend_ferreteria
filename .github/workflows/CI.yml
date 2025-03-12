@@ -29,3 +29,11 @@ jobs:
       # 4. Copiar archivo .env (Laravel 11 usa .env.example por defecto)
       - name: Copy .env
         run: cp .env.example .env
+        
+      # 5. Generar la clave de la aplicación
+      - name: Generate application key
+        run: php artisan key:generate
+
+      # 6. Ejecutar pruebas
+      - name: Run tests
+        run: php artisan test

@@ -3,7 +3,9 @@ name: CI Laravel 11
 # Cuándo ejecutar el flujo: en cada push o pull request a la rama main
 on:
   push:
-    branches: [ main ]
+    branches: 
+      - main
+      - develop
 jobs:
   tests:
     name: Run Tests
@@ -29,7 +31,7 @@ jobs:
       # 4. Copiar archivo .env (Laravel 11 usa .env.example por defecto)
       - name: Copy .env
         run: cp .env.example .env
-        
+
       # 5. Generar la clave de la aplicación
       - name: Generate application key
         run: php artisan key:generate

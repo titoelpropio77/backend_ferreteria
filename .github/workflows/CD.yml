@@ -54,7 +54,7 @@ jobs:
         run: composer install --no-progress --no-suggest --prefer-dist
 
       - name: Deploy to SFTP
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.5
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           username: 44781c2b11ec454da83fa25a48bf57a4
           server: us-east-1.sftpcloud.io

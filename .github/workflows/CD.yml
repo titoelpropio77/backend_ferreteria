@@ -60,4 +60,4 @@ jobs:
           server: us-east-1.sftpcloud.io
           password: reWBFZKttYDLwVY2ja0ZZqCOEvqfWRU1  # Descomenta si usas contraseña
           local_path: './*'  # Sube todo el proyecto
-          remote_path: '/backend/farreteria/'  # Cambia a la ruta de tu servidor
+          remote_path: './backend/farreteria/'  # Cambia a la ruta de tu servidor

@@ -1,0 +1,31 @@
+name: CI Laravel 11
+
+# Cuándo ejecutar el flujo: en cada push o pull request a la rama main
+on:
+  push:
+    branches: [ main ]
+jobs:
+  tests:
+    name: Run Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Clonar el repositorio
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # 2. Configurar PHP 8.3
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3' # Actualizado a PHP 8.3
+          extensions: mbstring, xml, bcmath, ctype, json, tokenizer, pdo, pdo_sqlite # Ajustado para Laravel 11
+          tools: composer:v2
+
+      # 3. Instalar dependencias de Composer
+      - name: Install Composer dependencies
+        run: composer install --no-progress --no-suggest --prefer-dist
+
+      # 4. Copiar archivo .env (Laravel 11 usa .env.example por defecto)
+      - name: Copy .env
+        run: cp .env.example .env

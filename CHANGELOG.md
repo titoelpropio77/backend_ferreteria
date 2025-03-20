@@ -18,6 +18,6 @@
 
 Laravel 12 includes a variety of changes to the application skeleton. Please consult the diff to see what's new.
 
-## version de php
+## version de php 8.0
 
 php 8.3
